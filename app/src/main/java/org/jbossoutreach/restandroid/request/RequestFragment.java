@@ -24,6 +24,7 @@ import butterknife.Unbinder;
 
 public class RequestFragment extends MainFragment {
 
+    private final Handler mHandler = new Handler();
     @BindView(R.id.cardView_response)
     CardView responseCard;
     @BindView(R.id.progressBar_request)
@@ -36,7 +37,6 @@ public class RequestFragment extends MainFragment {
     TextView urlText;
     @BindView(R.id.textView_request_method)
     TextView methodText;
-
     private Unbinder mUnbinder;
 
     @Override
@@ -54,6 +54,7 @@ public class RequestFragment extends MainFragment {
         super.onDestroyView();
 
         mUnbinder.unbind();
+        mHandler.removeCallbacksAndMessages(null);
     }
 
     @OnClick(R.id.button_request_edit)
@@ -70,7 +71,7 @@ public class RequestFragment extends MainFragment {
     public void loadResponse() {
         responseCard.setVisibility(View.GONE);
         progressBar.setVisibility(View.VISIBLE);
-        (new Handler()).postDelayed(() -> {
+        mHandler.postDelayed(() -> {
             progressBar.setVisibility(View.GONE);
             responseCard.setVisibility(View.VISIBLE);
         }, 2000);
@@ -116,5 +117,10 @@ public class RequestFragment extends MainFragment {
                 }
             }
         }
+    }
+
+    @Override
+    protected int getTitle() {
+        return R.string.title_request_fragment;
     }
 }

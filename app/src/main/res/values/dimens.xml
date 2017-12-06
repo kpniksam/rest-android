@@ -1,4 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <dimen name="height_request_history_item">48dp</dimen>
+
+    <dimen name="cardview_horizontal_margin">16dp</dimen>
+    <dimen name="edit_textinputlayout_start_margin">12dp</dimen>
+    <dimen name="edit_textinputlayout_end_margin">16dp</dimen>
+    <dimen name="edit_textview_horizontal_margin">16dp</dimen>
+    <dimen name="edit_spinner_horizontal_margin">8dp</dimen>
 </resources>

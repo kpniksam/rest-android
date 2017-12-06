@@ -7,7 +7,6 @@ import android.support.annotation.StringRes;
 import android.support.design.widget.BottomNavigationView;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentTransaction;
-import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
 
 import org.jbossoutreach.restandroid.history.HistoryFragment;
@@ -72,16 +71,12 @@ public class MainActivity extends AppCompatActivity {
         }
 
         Fragment newFragment = null;
-
-        mTitleRes = R.string.app_name;
         switch (item) {
             case REQUEST:
                 newFragment = new RequestFragment();
-                mTitleRes = R.string.title_request_fragment;
                 break;
             case HISTORY:
                 newFragment = new HistoryFragment();
-                mTitleRes = R.string.title_history_fragment;
                 break;
         }
 
@@ -90,15 +85,6 @@ public class MainActivity extends AppCompatActivity {
                 .setTransition(FragmentTransaction.TRANSIT_FRAGMENT_FADE)
                 .replace(R.id.constraintLayout_main, newFragment)
                 .commit();
-
-        updateActionBarTitle();
-    }
-
-    private void updateActionBarTitle() {
-        final ActionBar actionBar = getSupportActionBar();
-        if (actionBar != null) {
-            actionBar.setTitle(mTitleRes);
-        }
     }
 
     @Override

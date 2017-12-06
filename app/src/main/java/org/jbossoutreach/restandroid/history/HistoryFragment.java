@@ -1,16 +1,18 @@
 package org.jbossoutreach.restandroid.history;
 
+import android.content.Context;
+import android.content.Intent;
 import android.content.res.Resources;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.design.widget.Snackbar;
-import android.support.v4.app.Fragment;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
+import org.jbossoutreach.restandroid.MainFragment;
 import org.jbossoutreach.restandroid.R;
 
 import java.util.ArrayList;
@@ -20,9 +22,10 @@ import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.Unbinder;
 
-public class HistoryFragment extends Fragment {
+public class HistoryFragment extends MainFragment {
     @BindView(R.id.recyclerView_history)
     RecyclerView recyclerView;
+
     private Unbinder mUnbinder;
 
     @Override
@@ -44,6 +47,18 @@ public class HistoryFragment extends Fragment {
         mockList.add(new Request(Request.Method.POST, "http://www.example.com"));
         mockList.add(new Request(Request.Method.PUT, "http://www.example.com"));
         mockList.add(new Request(Request.Method.DELETE, "https://www.google.com"));
+        mockList.add(new Request(Request.Method.GET, "https://www.google.com"));
+        mockList.add(new Request(Request.Method.POST, "http://www.example.com"));
+        mockList.add(new Request(Request.Method.PUT, "http://www.example.com"));
+        mockList.add(new Request(Request.Method.DELETE, "https://www.google.com"));
+        mockList.add(new Request(Request.Method.GET, "https://www.google.com"));
+        mockList.add(new Request(Request.Method.POST, "http://www.example.com"));
+        mockList.add(new Request(Request.Method.PUT, "http://www.example.com"));
+        mockList.add(new Request(Request.Method.DELETE, "https://www.google.com"));
+        mockList.add(new Request(Request.Method.GET, "https://www.google.com"));
+        mockList.add(new Request(Request.Method.POST, "http://www.example.com"));
+        mockList.add(new Request(Request.Method.PUT, "http://www.example.com"));
+        mockList.add(new Request(Request.Method.DELETE, "https://www.google.com"));
         recyclerView.setAdapter(new Adapter(mockList));
     }
 
@@ -52,6 +67,16 @@ public class HistoryFragment extends Fragment {
         super.onDestroyView();
 
         mUnbinder.unbind();
+    }
+
+    @Override
+    protected void onNewIntent(Intent intent) {
+        // Do nothing
+    }
+
+    @Override
+    protected int getTitle() {
+        return R.string.title_history_fragment;
     }
 
     private final class Adapter extends RecyclerView.Adapter<Adapter.ViewHolder> {
@@ -97,20 +122,23 @@ public class HistoryFragment extends Fragment {
 
             void bind(Request request) {
                 method.setText(request.method.toString());
-                final Resources res = getContext().getResources();
-                switch (request.method) {
-                    case GET:
-                        method.setTextColor(res.getColor(R.color.color_request_method_get));
-                        break;
-                    case POST:
-                        method.setTextColor(res.getColor(R.color.color_request_method_post));
-                        break;
-                    case PUT:
-                        method.setTextColor(res.getColor(R.color.color_request_method_put));
-                        break;
-                    case DELETE:
-                        method.setTextColor(res.getColor(R.color.color_request_method_delete));
-                        break;
+                final Context context = getContext();
+                if (context != null) {
+                    final Resources res = getContext().getResources();
+                    switch (request.method) {
+                        case GET:
+                            method.setTextColor(res.getColor(R.color.color_request_method_get));
+                            break;
+                        case POST:
+                            method.setTextColor(res.getColor(R.color.color_request_method_post));
+                            break;
+                        case PUT:
+                            method.setTextColor(res.getColor(R.color.color_request_method_put));
+                            break;
+                        case DELETE:
+                            method.setTextColor(res.getColor(R.color.color_request_method_delete));
+                            break;
+                    }
                 }
                 url.setText(request.url);
             }

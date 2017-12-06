@@ -117,7 +117,8 @@ public class HistoryFragment extends Fragment {
 
             @Override
             public void onClick(View view) {
-                Snackbar.make(view, "Item clicked", Snackbar.LENGTH_SHORT).show();
+                final Resources res = getContext().getResources();
+                Snackbar.make(view, res.getString(R.string.text_item_clicked_prompt), Snackbar.LENGTH_SHORT).show();
             }
         }
     }

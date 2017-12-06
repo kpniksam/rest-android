@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Rest Android</string>
+    <string name="title_main_navigation_request">Zapytanie</string>
+    <string name="title_main_navigation_history">Historia</string>
+    <string name="title_request_fragment">Aktualne zapytanie</string>
+    <string name="button_request_edit">Edytuj</string>
+    <string name="text_request_title">ZAPYTANIE</string>
+    <string name="text_request_url_title">URL</string>
+    <string name="text_request_url_description_none">Brak</string>
+    <string name="text_request_headers_title">Nagłówki</string>
+    <string name="text_request_headers_description">%1$d pary</string>
+    <string name="text_request_headers_description_none">0 par</string>
+    <string name="text_request_body_title">Treść</string>
+    <string name="text_request_body_description">%1$d znaki</string>
+    <string name="text_request_body_description_none">0 znaków</string>
+    <string name="text_response_title">ODPOWIEDŹ</string>
+    <string name="button_response_details">Więcej</string>
+    <string name="title_edit_request">Edytuj zapytanie</string>
+    <string name="title_edit_request_done">Gotowe</string>
+    <string name="text_edit_header">Nagłówki</string>
+    <string name="hint_edit_header_value">Wartość</string>
+    <string name="hint_edit_header_key">Nazwa</string>
+    <string name="hint_edit_body">Treść</string>
+    <string name="text_edit_required_field">* Wymagane</string>
+    <string name="text_edit_method">Metoda</string>
+    <string name="title_response_details_info">Informacje</string>
+    <string name="title_history_fragment">Historia</string>
+    <string name="title_response_details">Detale wyniku</string>
+    <string name="text_item_clicked_prompt">Element kliknięty</string>
+</resources>

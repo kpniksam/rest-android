@@ -1,5 +1,7 @@
 # rest-android
 
+![Travis](https://api.travis-ci.org/jboss-outreach/rest-android.svg)
+
 This is a Android Client for testing Rest HTTP calls.
 
 ### Setup for Developers

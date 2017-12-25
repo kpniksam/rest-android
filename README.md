@@ -18,48 +18,45 @@ This is a Android Client for testing Rest HTTP calls.
 
 ### Configure remotes
 
-1.When a repository is cloned, it has a default remote called origin that points
-to your fork on GitHub, not the original repository it was forked from. To keep
-track of the original repository, you should add another remote named upstream:
+Note: When a repository is cloned, it has a default remote called origin that points to your fork on GitHub, not the original repository it was forked from. To keep track of the original repository, you should add another remote named upstream:
 
-2. Open terminal or git bash in your local repository and set up the origin:
+1. Open terminal or git bash in your local repository and clone the repository:
 
-`$ git remote add origin https://github.com/YOUR_USERNAME/rest-android.git`
+`$ git clone https://github.com/YOUR_USERNAME/rest-android.git`
 
-4. Set the upstream:
+2. Set the upstream:
 
 `$ git remote add upstream https://github.com/jboss-outreach/rest-android.git`
 
-6. Run `$ git remote -v` to check the status, you should see something like the
-following:
+3. Run `$ git remote -v` to check the status, you should see something like the following:
 
-` origin https://github.com/YOUR_USERNAME/powerup-android.git (fetch)
+``` 
+origin https://github.com/YOUR_USERNAME/powerup-android.git (fetch)
 
 origin https://github.com/YOUR_USERNAME/powerup-android.git (push)
 
 upstream https://github.com/systers/powerup-android.git (fetch)
 
-upstream https://github.com/systers/powerup-android.git (push) `
+upstream https://github.com/systers/powerup-android.git (push) 
+```
 
-7. To update your local copy with remote changes, run the following:
+4. To update your local copy with remote changes, run the following:
 
 `$ git fetch upstream`
 
 `$ git merge upstream/master`
 
-8. This will give you an exact copy of the current remote. Make sure you don't
-have any local changes.
+5. This will give you an exact copy of the current remote. Make sure you don't have any local changes.
 
 ### Contributing and developing a feature
 
-1. Make sure you are in the master branch git checkout master
+1. Make sure you are in the master branch `$ git checkout master`
 
-2. Sync your copy git pull
+2. Sync your copy with `$ git pull`
 
 3. Create a new branch with a meaningful name `$ git checkout -b branch_name`
 
-4. Develop your feature on Android Studio and run it using the emulator or
-connecting your own Android device
+4. Develop your feature on Android Studio and run it using the emulator or connecting your own Android device.
 
 5. Clean your project from Android Studio > Build/Clean project.
 
@@ -67,8 +64,7 @@ connecting your own Android device
 
 7. Commit your changes `$ git commit -m "Message briefly explaining the feature"`
 
-8. Keep one commit per feature. If you forgot to add changes, you can edit the
-previous commit `$ git commit --amend`
+8. Keep one commit per feature. If you forgot to add changes, you can edit the previous commit `$ git commit --amend`
 
 9. Push to your forked repository `$ git push origin branch-name`
 

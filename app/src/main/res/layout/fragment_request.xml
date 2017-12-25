@@ -331,6 +331,7 @@
         android:layout_marginEnd="16dp"
         android:layout_marginStart="16dp"
         android:layout_marginTop="16dp"
+        android:backgroundTint="@color/color_fab"
         android:clickable="true"
         android:focusable="true"
         app:srcCompat="@drawable/ic_send_white_24dp" />

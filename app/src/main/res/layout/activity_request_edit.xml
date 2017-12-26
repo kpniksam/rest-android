@@ -24,7 +24,24 @@
 
         <android.support.constraint.ConstraintLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:padding="5dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="@dimen/edit_textview_horizontal_margin"
+                android:layout_marginStart="@dimen/edit_textview_horizontal_margin"
+                android:layout_marginTop="48dp"
+                android:paddingTop="10dp"
+                android:text="@string/text_edit_basic_data"
+                android:textAllCaps="true"
+                android:textStyle="bold"
+                android:textAppearance="@style/TextAppearance.AppCompat.Subhead"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="parent" />
 
             <android.support.design.widget.TextInputLayout
                 android:id="@+id/textInputLayout_edit_url"
@@ -34,7 +51,7 @@
                 android:layout_marginLeft="@dimen/edit_textinputlayout_start_margin"
                 android:layout_marginRight="@dimen/edit_textinputlayout_end_margin"
                 android:layout_marginStart="@dimen/edit_textinputlayout_start_margin"
-                android:layout_marginTop="24dp"
+                android:layout_marginTop="36dp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent">
@@ -56,6 +73,8 @@
                 android:layout_marginStart="@dimen/edit_textview_horizontal_margin"
                 android:layout_marginTop="48dp"
                 android:text="@string/text_edit_header"
+                android:textAllCaps="true"
+                android:textStyle="bold"
                 android:textAppearance="@style/TextAppearance.AppCompat.Subhead"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.0"
@@ -90,8 +109,8 @@
                 android:layout_marginEnd="@dimen/edit_textinputlayout_end_margin"
                 android:layout_marginLeft="4dp"
                 android:layout_marginRight="@dimen/edit_textinputlayout_end_margin"
-                android:layout_marginStart="4dp"
                 android:layout_marginTop="4dp"
+                android:layout_marginStart="4dp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.5"
                 app:layout_constraintStart_toEndOf="@+id/textInputLayout_header_key"
@@ -112,7 +131,7 @@
                 android:layout_marginLeft="@dimen/edit_textinputlayout_start_margin"
                 android:layout_marginRight="@dimen/edit_textinputlayout_end_margin"
                 android:layout_marginStart="@dimen/edit_textinputlayout_start_margin"
-                android:layout_marginTop="48dp"
+                android:layout_marginTop="4dp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.625"
                 app:layout_constraintStart_toStartOf="parent"
@@ -122,7 +141,39 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:hint="@string/hint_edit_body" />
+
             </android.support.design.widget.TextInputLayout>
+
+
+            <TextView
+                android:id="@+id/textView3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="@dimen/edit_textview_horizontal_margin"
+                android:layout_marginStart="@dimen/edit_textview_horizontal_margin"
+                android:layout_marginTop="48dp"
+                android:text="@string/text_edit_method"
+                android:textAllCaps="true"
+                android:textStyle="bold"
+                android:textAppearance="@style/TextAppearance.AppCompat.Subhead"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/textInputLayout_edit_body" />
+
+            <Spinner
+                android:id="@+id/spinner_edit"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="@dimen/edit_spinner_horizontal_margin"
+                android:layout_marginStart="@dimen/edit_spinner_horizontal_margin"
+                android:layout_marginTop="10dp"
+                android:prompt="@string/text_edit_method"
+                android:entries="@array/array_edit_request_methods"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/textView3" />
 
             <TextView
                 android:id="@+id/textView2"
@@ -133,6 +184,7 @@
                 android:layout_marginStart="@dimen/edit_textview_horizontal_margin"
                 android:layout_marginTop="48dp"
                 android:text="@string/text_edit_required_field"
+                android:textColor="@color/color_fab"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.0"
@@ -140,32 +192,6 @@
                 app:layout_constraintTop_toBottomOf="@+id/spinner_edit"
                 app:layout_constraintVertical_bias="0.0" />
 
-            <Spinner
-                android:id="@+id/spinner_edit"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginEnd="@dimen/edit_spinner_horizontal_margin"
-                android:layout_marginStart="@dimen/edit_spinner_horizontal_margin"
-                android:layout_marginTop="8dp"
-                android:entries="@array/array_edit_request_methods"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.0"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/textView3" />
-
-            <TextView
-                android:id="@+id/textView3"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginEnd="@dimen/edit_textview_horizontal_margin"
-                android:layout_marginStart="@dimen/edit_textview_horizontal_margin"
-                android:layout_marginTop="48dp"
-                android:text="@string/text_edit_method"
-                android:textAppearance="@style/TextAppearance.AppCompat.Subhead"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.0"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/textInputLayout_edit_body" />
 
         </android.support.constraint.ConstraintLayout>
     </android.support.v4.widget.NestedScrollView>

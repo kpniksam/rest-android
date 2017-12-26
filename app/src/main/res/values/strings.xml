@@ -28,6 +28,7 @@
     <string name="title_edit_request_done">Done</string>
 
     <string name="hint_edit_url">URL *</string>
+    <string name="text_edit_basic_data">Basic Data</string>
     <string name="text_edit_header">Headers</string>
     <string name="hint_edit_header_key">Key</string>
     <string name="hint_edit_header_value">Value</string>

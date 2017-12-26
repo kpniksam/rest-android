@@ -4,13 +4,18 @@ import android.arch.lifecycle.ViewModelProviders;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.StringRes;
+import android.support.design.internal.BottomNavigationItemView;
+import android.support.design.internal.BottomNavigationMenuView;
 import android.support.design.widget.BottomNavigationView;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentTransaction;
 import android.support.v7.app.AppCompatActivity;
+import android.util.Log;
 
 import org.jbossoutreach.restandroid.history.HistoryFragment;
 import org.jbossoutreach.restandroid.request.RequestFragment;
+
+import java.lang.reflect.Field;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -34,6 +39,9 @@ public class MainActivity extends AppCompatActivity {
 
         mViewModel = ViewModelProviders.of(this).get(MainActivityViewModel.class);
 
+
+        disableShiftMode(navigationView);
+
         navigationView.setOnNavigationItemSelectedListener(item -> {
             switch (item.getItemId()) {
                 case R.id.navigation_request:
@@ -50,19 +58,25 @@ public class MainActivity extends AppCompatActivity {
 
         mViewModel.navigationLiveData.observe(this, this::showNavigationItem);
 
-//        Example usage of RestClient
-//        Call<Response> getRequest = new RestClient().getResponseService().getCall("the url", "Body if the request has one");
-//        getRequest.enqueue(new Callback<Response>() {
-//            @Override
-//            public void onResponse(Call<Response> call, retrofit2.Response<Response> response) {
-//
-//            }
-//
-//            @Override
-//            public void onFailure(Call<Response> call, Throwable t) {
-//
-//            }
-//        });
+
+
+        /*
+
+        Example usage of RestClient
+        Call<Response> getRequest = new RestClient().getResponseService().getCall("the url", "Body if the request has one");
+        getRequest.enqueue(new Callback<Response>() {
+            @Override
+            public void onResponse(Call<Response> call, retrofit2.Response<Response> response) {
+
+            }
+
+            @Override
+            public void onFailure(Call<Response> call, Throwable t) {
+
+            }
+        });
+
+        */
     }
 
     private void showNavigationItem(MainActivityViewModel.NavigationItem item) {
@@ -97,4 +111,27 @@ public class MainActivity extends AppCompatActivity {
             ((MainFragment) fragment).onNewIntent(intent);
         }
     }
+
+    public static void disableShiftMode(BottomNavigationView view) {
+        BottomNavigationMenuView menuView = (BottomNavigationMenuView) view.getChildAt(0);
+        try {
+            Field shiftingMode = menuView.getClass().getDeclaredField("mShiftingMode");
+            shiftingMode.setAccessible(true);
+            shiftingMode.setBoolean(menuView, false);
+            shiftingMode.setAccessible(false);
+            for (int i = 0; i < menuView.getChildCount(); i++) {
+                BottomNavigationItemView item = (BottomNavigationItemView) menuView.getChildAt(i);
+                //noinspection RestrictedApi
+                item.setShiftingMode(false);
+                // set once again checked value, so view will be updated
+                //noinspection RestrictedApi
+                item.setChecked(item.getItemData().isChecked());
+            }
+        } catch (NoSuchFieldException e) {
+            Log.e("BNVHelper", "Unable to get shift mode field", e);
+        } catch (IllegalAccessException e) {
+            Log.e("BNVHelper", "Unable to change value of shift mode", e);
+        }
+    }
+
 }

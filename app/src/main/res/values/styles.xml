@@ -3,14 +3,14 @@
     <!-- Base application theme. -->
     <style name="AppTheme" parent="Theme.AppCompat.DayNight.NoActionBar">
         <!-- Customize your theme here. -->
-        <item name="colorPrimary">#fff44336</item>
-        <item name="colorPrimaryDark">#ffd32f2f</item>
+        <item name="colorPrimary">#abb0ff</item>
+        <item name="colorPrimaryDark">#5e7db6</item>
         <item name="colorAccent">#ff448aff</item>
     </style>
 
     <style name="restapp" parent="AppTheme" >
-        <item name="colorPrimaryDark">#ffd32f2f</item>
-        <item name="colorPrimary">#fff44336</item>
+        <item name="colorPrimaryDark">#5e7db6</item>
+        <item name="colorPrimary">#7d84ff</item>
         <item name="colorAccent">#ff448aff</item>
     </style>
 

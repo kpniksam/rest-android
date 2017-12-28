@@ -11,6 +11,6 @@
     <color name="color_request_method_delete">#f44336</color>
 
     <!-- Color FAB -->
-    <color name="color_fab">#FF4081</color>
+    <color name="color_fab">#ff0066</color>
 
 </resources>

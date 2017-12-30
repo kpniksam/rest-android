@@ -25,4 +25,5 @@
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:menu="@menu/menu_navigation_main" />
+
 </android.support.constraint.ConstraintLayout>

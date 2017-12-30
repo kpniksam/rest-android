@@ -19,7 +19,6 @@
 
     </android.support.design.widget.AppBarLayout>
 
-
     <android.support.v7.widget.RecyclerView
         android:id="@+id/recyclerView_history"
         android:layout_width="match_parent"
@@ -28,6 +27,5 @@
         app:layoutManager="LinearLayoutManager"
         app:layout_behavior="@string/appbar_scrolling_view_behavior"
         tools:listitem="@android:layout/simple_list_item_1" />
-
 
 </android.support.design.widget.CoordinatorLayout>

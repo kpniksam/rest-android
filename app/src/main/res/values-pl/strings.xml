@@ -28,4 +28,6 @@
     <string name="title_history_fragment">Historia</string>
     <string name="title_response_details">Detale wyniku</string>
     <string name="text_item_clicked_prompt">Element kliknięty</string>
+    <string name="hint_edit_url">"URL "</string>
+    <string name="text_edit_basic_data">Basic Data</string>
 </resources>

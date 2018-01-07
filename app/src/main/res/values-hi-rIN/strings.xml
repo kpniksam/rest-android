@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">रेस्ट ऐंड्रॉड</string>
+    <string name="button_request_edit">एडिट</string>
+    <string name="button_response_details">जानकारी</string>
+    <string name="hint_edit_body">बॉडी</string>
+    <string name="hint_edit_header_key">Key</string>
+    <string name="hint_edit_header_value">Value</string>
+    <string name="hint_edit_url">यू.आर.एल</string>
+    <string name="text_edit_basic_data">मूल डेटा</string>
+    <string name="text_edit_header">शीर्षलेख</string>
+    <string name="text_edit_method">तरीका</string>
+    <string name="text_edit_required_field">आवश्यक क्षेत्र</string>
+    <string name="text_item_clicked_prompt">आइटम क्लिक किया</string>
+    <string name="text_request_body_description">%1$d वर्ण</string>
+    <string name="text_request_body_description_none">0 वर्ण</string>
+    <string name="text_request_body_title">बॉडी</string>
+    <string name="text_request_headers_description">%1$d जोड़</string>
+    <string name="text_request_headers_description_none">0 जोड़</string>
+    <string name="text_request_headers_title">शीर्षलेख</string>
+    <string name="text_request_title">निवेदन</string>
+    <string name="text_request_url_description_none">कुछ नहीं</string>
+    <string name="text_request_url_title">यू.आर.एल</string>
+    <string name="text_response_title">जवाब</string>
+    <string name="title_edit_request">निवेदन को संपादित करें</string>
+    <string name="title_edit_request_done">पूर्ण</string>
+    <string name="title_history_fragment">इतिहास</string>
+    <string name="title_main_navigation_history">इतिहास</string>
+    <string name="title_main_navigation_request">निवेदन</string>
+    <string name="title_request_fragment">वर्तमान निवेदन</string>
+    <string name="title_response_details">जवाब की जानकारी</string>
+    <string name="title_response_details_info">जानकारी</string>
+</resources>

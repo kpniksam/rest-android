@@ -1,9 +1,6 @@
 package org.jbossoutreach.restandroid.backend;
 
-import android.net.Uri;
 import android.util.Log;
-
-import org.jbossoutreach.restandroid.BuildConfig;
 
 import java.io.IOException;
 import java.net.URI;
@@ -60,3 +57,4 @@ public class FakeInterceptor implements Interceptor {
         return response;
     }
 }
+
